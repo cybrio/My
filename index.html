@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>إضافة جهة الاتصال</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+            localStorage.setItem("mode", body.classList.contains("dark-mode")? "dark": "light");
+}
+        document.addEventListener("DOMContentLoaded", () => {
+            if (localStorage.getItem("mode") === "dark") {
+                document.body.classList.add("dark-mode");
+}
+});
+    </script>
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
@@ -17,13 +29,18 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            transition: background 0.5s ease-in-out;
+}
+.dark-mode {
+            background: linear-gradient(to right, #222, #444);
+            color: #ddd;
 }
 .card {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            width: 320px;
+            width: 350px;
             text-align: center;
             animation: fadeIn 0.8s ease-in-out;
 }
@@ -31,10 +48,16 @@
             color: #333;
             font-weight: 700;
 }
+.dark-mode.card {
+            background-color: rgba(50, 50, 50, 0.9);
+}
 .info {
             font-size: 18px;
             margin: 10px 0;
             color: #222;
+}
+.dark-mode.info {
+            color: #ddd;
 }
 .btn {
             display: inline-block;
@@ -53,6 +76,36 @@
             background: linear-gradient(to right, #0056b3, #003d7a);
             transform: scale(1.05);
 }
+.contact-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+}
+.contact-btn:hover {
+            background: #218838;
+            transform: scale(1.05);
+}
+.mode-toggle {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffc107;
+            color: #333;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+}
+.mode-toggle:hover {
+            background: #e0a800;
+            transform: scale(1.05);
+}
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px);}
             to { opacity: 1; transform: translateY(0);}
@@ -68,7 +121,11 @@
         <div class="info">zahranimabdullah@outlook.com</div>
 
         <a class="btn" href="https://drive.google.com/uc?export=download&id=1aV8VzS3kJNno0h_eTRXDIlDr5f6HaQLz" download>أضف جهة الاتصال</a>
-    </div>
+        <button class="contact-btn" onclick="window.location.href='mailto:zahranimabdullah@outlook.com'">تواصل الآن</button>
+        <button class="mode-toggle" onclick="toggleMode()">تبديل الوضع</button>
+
+
+</div>
 
 </body>
 </html>
