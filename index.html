@@ -1,75 +1,220 @@
-```html
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>إضافة جهة الاتصال</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            text-align: center;
-            background: linear-gradient(to right, #007bff, #0056b3);
-            color: #fff;
-            padding: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-}
-.card {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            width: 320px;
-            text-align: center;
-            animation: fadeIn 0.8s ease-in-out;
-}
-        h1 {
-            color: #333;
-            font-weight: 700;
-}
-.info {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #222;
-}
-.btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 24px;
-            background: linear-gradient(to right, #007bff, #0056b3);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-.btn:hover {
-            background: linear-gradient(to right, #0056b3, #003d7a);
-            transform: scale(1.05);
-}
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px);}
-            to { opacity: 1; transform: translateY(0);}
-}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Address - Today's Coffee</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      text-align: center;
+      position: relative;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .header {
+      padding: 15px;
+      font-size: clamp(22px, 5vw, 28px);
+      font-weight: bold;
+      color: #3E2723;
+      background-color: #D7CCC8;
+      margin-bottom: 10px;
+    }
+    .subheader {
+      font-size: clamp(18px, 4vw, 22px);
+      color: #5D4037;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #3E2723;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 50vh;
+      padding: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: clamp(18px, 4vw, 22px);
+      cursor: pointer;
+      background-color: #3E2723;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin: 20px 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background-color: #5D4037;
+    }
+    button:active {
+      transform: scale(0.98);
+    }
+    footer {
+      width: 100%;
+      padding: 15px 10px;
+      font-size: 14px;
+      color: #666;
+      background-color: #D7CCC8;
+      border-top: 1px solid #BCAAA4;
+      position: fixed;
+      bottom: 0;
+      line-height: 1.5;
+    }
+    footer a {
+      color: #3E2723;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    @media print {
+      body * { visibility: hidden; }
+      #printArea, #printArea * { visibility: visible; }
+      #printArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+        line-height: 1.4;
+        padding: 20px;
+      }
+    }
+    @media (max-width: 600px) {
+      button {
+        padding: 12px 25px;
+        font-size: 16px;
+      }
+      .header {
+        font-size: 20px;
+      }
+      .subheader {
+        font-size: 16px;
+      }
+      footer {
+        font-size: 12px;
+        padding: 10px 5px;
+      }
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>معلومات جهة الاتصال</h1>
-        <div class="info">محمد عبدالله الزهراني</div>
-        <div class="info">0561606940</div>
-        <div class="info">zahranimabdullah@outlook.com</div>
+  <div class="header">Coffee Address</div>
+  <div class="subheader">Today's Coffee</div>
+  
+  <!-- شعار القهوة -->
+  <img src="https://via.placeholder.com/150" alt="Coffee Logo" class="logo" id="coffeeLogo">
 
-        <a class="btn" href="https://drive.google.com/uc?export=download&id=1aV8VzS3kJNno0h_eTRXDIlDr5f6HaQLz" download>أضف جهة الاتصال</a>
-    </div>
+  <div class="container">
+    <button onclick="printTime()">🕒 Print Time</button>
+    <div id="printArea" style="display:none;"></div>
+  </div>
 
+  <footer>
+    &copy; <span id="year"></span> Mohammed Alzahrani | 14644 Coffee Address<br>
+    <a href="mailto:zahranimabdullah@outlook.com">zahranimabdullah@outlook.com</a>
+  </footer>
+
+  <script>
+    // عرض السنة الحالية
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // دالة لتنسيق التاريخ
+    function fmtDate(d) {
+      const dd = String(d.getDate()).padStart(2, '0');
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const yy = d.getFullYear();
+      return `${dd}-${mm}-${yy}`;
+    }
+
+    // دالة لتنسيق الوقت
+    function fmtTime(d) {
+      let h = d.getHours();
+      const m = String(d.getMinutes()).padStart(2, '0');
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+      return `${String(h).padStart(2, '0')}:${m} ${ampm}`;
+    }
+
+    // دالة الطباعة المعدلة للعمل على GitHub Pages
+    function printTime() {
+      const now = new Date();
+      const end = new Date(now.getTime() + 3 * 60 * 60 * 1000);
+      
+      const printContent = `
+        <div style="font-family: monospace; text-align: center; padding: 20px;">
+          <h2 style="color: #3E2723;">Coffee Address</h2>
+          <p>Today's Coffee</p>
+          <p>${fmtDate(now)}</p>
+          <p>Brewed: ${fmtTime(now)}</p>
+          <p>Expires: ${fmtTime(end)}</p>
+        </div>
+      `;
+      
+      // حل متوافق مع GitHub Pages
+      if(window.location.host.includes('github.io')) {
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(`
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <title>Today's Coffee</title>
+              <style>
+                body { font-family: Arial; text-align: center; padding: 20px; }
+                h2 { color: #3E2723; }
+                @media print { 
+                  body { visibility: visible !important; } 
+                  * { visibility: visible !important; }
+                }
+              </style>
+            </head>
+            <body>${printContent}</body>
+          </html>
+        `);
+        printWindow.document.close();
+        
+        setTimeout(() => {
+          printWindow.print();
+          printWindow.close();
+        }, 500);
+      } else {
+        // الطريقة العادية للطباعة
+        const area = document.getElementById('printArea');
+        area.innerHTML = printContent;
+        area.style.display = 'block';
+        
+        setTimeout(() => {
+          window.print();
+          setTimeout(() => {
+            area.style.display = 'none';
+          }, 1000);
+        }, 500);
+      }
+    }
+
+    // تحميل الشعار (يمكن استبدال الرابط بصورة خاصة بك)
+    document.getElementById('coffeeLogo').src = 'https://drive.google.com/file/d/1yhdS66nGo2QQNZ-tK0eWJ_fdzYa-WWdz/view?usp=drivesdk';
+  </script>
 </body>
 </html>
-``` 
