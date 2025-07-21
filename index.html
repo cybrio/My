@@ -1,152 +1,152 @@
-‏<!DOCTYPE html>
-‏<html lang="en">
-‏<head>
-‏  <meta charset="UTF-8">
-‏  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-‏  <title>Today's Coffee</title>
-‏  <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today's Coffee</title>
+  <style>
     * {
-‏      box-sizing: border-box;
+      box-sizing: border-box;
     }
-‏    body {
-‏      margin: 0;
-‏      padding: 0;
-‏      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-‏      text-align: center;
-‏      position: relative;
-‏      min-height: 100vh;
-‏      background-color: #f5f5f5;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      text-align: center;
+      position: relative;
+      min-height: 100vh;
+      background-color: #f5f5f5;
     }
-‏    .header {
-‏      padding: 20px;
-‏      font-size: clamp(24px, 5vw, 32px);
-‏      font-weight: bold;
-‏      color: #3E2723;
+    .header {
+      padding: 20px;
+      font-size: clamp(24px, 5vw, 32px);
+      font-weight: bold;
+      color: #3E2723;
     }
-‏    .container {
-‏      display: flex;
-‏      flex-direction: column;
-‏      align-items: center;
-‏      justify-content: center;
-‏      min-height: 70vh;
-‏      padding: 20px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      padding: 20px;
     }
-‏    button {
-‏      padding: 15px 30px;
-‏      font-size: clamp(18px, 4vw, 24px);
-‏      cursor: pointer;
-‏      background-color: #3E2723;
-‏      color: white;
-‏      border: none;
-‏      border-radius: 8px;
-‏      margin: 20px 0;
-‏      transition: all 0.3s ease;
+    button {
+      padding: 15px 30px;
+      font-size: clamp(18px, 4vw, 24px);
+      cursor: pointer;
+      background-color: #3E2723;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin: 20px 0;
+      transition: all 0.3s ease;
     }
-‏    button:hover {
-‏      background-color: #5D4037;
+    button:hover {
+      background-color: #5D4037;
     }
-‏    button:active {
-‏      transform: scale(0.98);
+    button:active {
+      transform: scale(0.98);
     }
-‏    footer {
-‏      width: 100%;
-‏      padding: 15px 0;
-‏      font-size: 14px;
-‏      color: #666;
-‏      background-color: #f8f8f8;
-‏      border-top: 1px solid #eee;
-‏      position: fixed;
-‏      bottom: 0;
+    footer {
+      width: 100%;
+      padding: 15px 0;
+      font-size: 14px;
+      color: #666;
+      background-color: #f8f8f8;
+      border-top: 1px solid #eee;
+      position: fixed;
+      bottom: 0;
     }
-‏    footer a {
-‏      color: #3E2723;
-‏      text-decoration: none;
-‏      font-weight: 500;
+    footer a {
+      color: #3E2723;
+      text-decoration: none;
+      font-weight: 500;
     }
-‏    @media print {
-‏      body * { visibility: hidden; }
-‏      #printArea, #printArea * { visibility: visible; }
-‏      #printArea {
-‏        position: absolute;
-‏        left: 0;
-‏        top: 0;
-‏        width: 80mm;
-‏        font-size: 36px;
-‏        text-align: center;
-‏        line-height: 1.4;
+    @media print {
+      body * { visibility: hidden; }
+      #printArea, #printArea * { visibility: visible; }
+      #printArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80mm;
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
       }
-‏      footer, .header { visibility: hidden; }
+      footer, .header { visibility: hidden; }
     }
-‏    @media (max-width: 600px) {
-‏      button {
-‏        padding: 12px 25px;
-‏        font-size: 16px;
+    @media (max-width: 600px) {
+      button {
+        padding: 12px 25px;
+        font-size: 16px;
       }
-‏      .header {
-‏        font-size: 22px;
+      .header {
+        font-size: 22px;
       }
     }
-‏  </style>
-‏</head>
-‏<body>
+  </style>
+</head>
+<body>
 
-‏  <div class="header">Coffee Address
-‏  </div>
-‏  <div>Today's coffee</div>
+  <div class="header">Coffee Address
+  </div>
+  <div>Today's coffee</div>
 
-‏  <div class="container">
-‏    <button onclick="printTime()">🕒 Print Time</button>
-‏    <div id="printArea" style="display:none;"></div>
-‏  </div>
+  <div class="container">
+    <button onclick="printTime()">🕒 Print Time</button>
+    <div id="printArea" style="display:none;"></div>
+  </div>
 
-‏  <footer>
+  <footer>
   
-‏    &copy; <span id="year"></span> Mohammed Alzahrani | 14644 
-‏     Coffee Address
-‏    <a href="mailto:zahranimabdullah@outlook.com">zahranimabdullah@outlook.com</a>
-‏  </footer>
+    &copy; <span id="year"></span> Mohammed Alzahrani | 14644 
+     Coffee Address
+    <a href="mailto:zahranimabdullah@outlook.com">zahranimabdullah@outlook.com</a>
+  </footer>
 
-‏  <script>
+  <script>
     // عرض السنة الحالية ديناميكياً
-‏    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-‏    function fmtDate(d) {
-‏      const dd = String(d.getDate()).padStart(2, '0');
-‏      const mm = String(d.getMonth() + 1).padStart(2, '0');
-‏      const yy = d.getFullYear();
-‏      return `${dd}-${mm}-${yy}`;
+    function fmtDate(d) {
+      const dd = String(d.getDate()).padStart(2, '0');
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const yy = d.getFullYear();
+      return `${dd}-${mm}-${yy}`;
     }
 
-‏    function fmtTime(d) {
-‏      let h = d.getHours();
-‏      const m = String(d.getMinutes()).padStart(2, '0');
-‏      const ampm = h >= 12 ? 'PM' : 'AM';
-‏      h = h % 12 || 12;
-‏      return `${String(h).padStart(2, '0')}:${m} ${ampm}`;
+    function fmtTime(d) {
+      let h = d.getHours();
+      const m = String(d.getMinutes()).padStart(2, '0');
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+      return `${String(h).padStart(2, '0')}:${m} ${ampm}`;
     }
 
-‏    function printTime() {
-‏      const now = new Date();
-‏      const prod = now;
-‏      const end = new Date(now.getTime() + 3 * 60 * 60 * 1000);
+    function printTime() {
+      const now = new Date();
+      const prod = now;
+      const end = new Date(now.getTime() + 3 * 60 * 60 * 1000);
 
-‏      const html = `
-‏        <p>${fmtDate(now)}</p>
-‏        <p>P   ${fmtTime(prod)}</p>
-‏        <p>E   ${fmtTime(end)}</p>
+      const html = `
+        <p>${fmtDate(now)}</p>
+        <p>P   ${fmtTime(prod)}</p>
+        <p>E   ${fmtTime(end)}</p>
       `;
 
-‏      const area = document.getElementById('printArea');
-‏      area.innerHTML = html;
-‏      area.style.display = 'block';
+      const area = document.getElementById('printArea');
+      area.innerHTML = html;
+      area.style.display = 'block';
 
-‏      setTimeout(() => {
-‏        window.print();
-‏        setTimeout(() => {
-‏          area.style.display = 'none';
+      setTimeout(() => {
+        window.print();
+        setTimeout(() => {
+          area.style.display = 'none';
         }, 1000);
       }, 500);
     }
-‏  </script>
-‏</body>
-‏</html>
+  </script>
+</body>
+</html>
